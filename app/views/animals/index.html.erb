@@ -1,0 +1,28 @@
+<h1>Animals List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Price</th>
+      <th>Location</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= animal.name %></td>
+        <td><%= animal.species %></td>
+        <td><%= number_to_currency(animal.price) %></td>
+        <td><%= animal.location %></td>
+        <td><%= animal.description %></td>
+        <td><%= link_to 'Show', animal_path(animal) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%# filter %>
+<%# list of animals %>
