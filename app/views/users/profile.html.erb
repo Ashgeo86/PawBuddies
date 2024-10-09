@@ -7,9 +7,25 @@
   <% end %>
 </ul>
 
+<h4>My animals</h4>
+<%= link_to 'Add an Animal', new_animal_path, class: 'btn btn-primary' %>
+<ul>
+  <% current_user.animals.each do |animal| %>
+    <li>
+      <h3><%= animal.name %></h3>
+      <p><strong>Species:</strong> <%= animal.species %></p>
+      <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
+      <p><strong>Location:</strong> <%= animal.location %></p>
+      <p><strong>Description:</strong> <%= animal.description %></p>
+      <%= link_to 'Show', animal_path(animal) %>
+    </li>
+  <% end %>
+</ul>
+
 <%# see their bookings
 <%# see their reviews
 <%# see their animals
 <%# see their profile
 <%# edit their profile
 <%# delete their profile
+<%# create animals %>

@@ -1,5 +1,15 @@
 <h1><%= @animal.name %>'s Profile</h1>
 
+<div class="animal-details">
+  <p><strong>Name:</strong> <%= @animal.name %></p>
+  <p><strong>Species:</strong> <%= @animal.species %></p>
+  <p><strong>Price:</strong> <%= number_to_currency(@animal.price) %></p>
+  <p><strong>Location:</strong> <%= @animal.location %></p>
+  <p><strong>Description:</strong> <%= @animal.description %></p>
+</div>
+
+
+
 <%= form_with model: [ @animal, Booking.new ] do |form| %>
   <div>
     <%= form.label :start_date %>
@@ -26,6 +36,8 @@
     </div>
   <% end %>
 <% end %>
+
+<%= link_to 'Back to Animals', animals_path %>
 
 <%# book an animal %>
 <%# see the animals details %>
