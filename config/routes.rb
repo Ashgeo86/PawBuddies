@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#profile'
 
   resources :animals, only: [:index, :show, :new, :create, :destroy] do
-    resources :bookings, only: [ :show, :create, :update, :edit, :destroy]
+    resources :bookings, only: [ :show, :create, :update, :edit]
   end
 
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index, :destroy]
 end

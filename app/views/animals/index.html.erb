@@ -1,26 +1,27 @@
 <h1>Animals List</h1>
-
 <%= link_to 'Add an Animal', new_animal_path, class: 'btn btn-primary' %>
 
-<ul class="animal-list">
+<div class="animal-cards">
   <% @animals.each do |animal| %>
-    <li>
-      <h3><%= animal.name %></h3>
-      <p><strong>Species:</strong> <%= animal.species %></p>
-      <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
-      <p><strong>Location:</strong> <%= animal.location %></p>
-      <p><strong>Description:</strong> <%= animal.description %></p>
-      <%= link_to 'Show', animal_path(animal) %>
-      <%# <%= link_to 'Delete an Animal', animals_path, class: 'btn btn-secondary' %>
-
-
-<%= link_to "Delete",
-  animal_path(animal),
-  class: 'btn btn-secondary', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-    </li>
+    <div class="card">
+      <div class="card-image">
+        <img src="https://static-00.iconduck.com/assets.00/animal-icon-2048x2048-rdj39f2s.png" alt="<%= animal.name %> image"/>
+      </div>
+      <div class="card-content">
+        <h3><%= animal.name %></h3>
+        <p><strong>Species:</strong> <%= animal.species %></p>
+        <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
+        <p><strong>Location:</strong> <%= animal.location %></p>
+        <p><strong>Description:</strong> <%= animal.description %></p>
+        <%= link_to 'Show', animal_path(animal), class: "btn btn-primary" %>
+        <%= link_to "Delete",
+           animal_path(animal),
+            class: 'btn btn-secondary', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
 
 <%# filter %>
 <%# list of animals %>
