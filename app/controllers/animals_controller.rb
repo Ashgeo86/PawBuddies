@@ -24,6 +24,13 @@ class AnimalsController < ApplicationController
     end
   end
 
+  def destroy
+    @animal = Animal.find(params[:id])
+    @animal.destroy
+    # No need for app/views/restaurants/destroy.html.erb
+    redirect_to animals_path, status: :see_other
+  end
+
   private
 
   def animal_params

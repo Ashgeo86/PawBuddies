@@ -3,6 +3,7 @@
 <div class="animal-container">
 <%= image_tag("cutedog1.jpeg", class: "profile-pic", alt: "Cute Dog") %>
 
+
 <div class="animal-details">
   <p><strong>Owner:</strong> <%= link_to "#{@animal.user.first_name} #{@animal.user.last_name}", profile_path(@animal.user) %></p>
   <p><strong>Species:</strong> <%= @animal.species %></p>
