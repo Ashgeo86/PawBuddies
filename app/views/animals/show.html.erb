@@ -1,5 +1,6 @@
 <h1><%= @animal.name %>'s Profile</h1>
 
+
 <div class="animal-details">
   <p><strong>Name:</strong> <%= @animal.name %></p>
   <p><strong>Species:</strong> <%= @animal.species %></p>
@@ -10,7 +11,7 @@
 
 
 
-<%= form_with model: [ @animal, Booking.new ] do |form| %>
+<%= form_with model: [ @animal, @booking ], local: true do |form| %>
   <div>
     <%= form.label :start_date %>
     <%= form.date_select :start_date %>

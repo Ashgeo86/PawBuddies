@@ -1,18 +1,24 @@
 <h1>Animals List</h1>
-
 <%= link_to 'Add an Animal', new_animal_path, class: 'btn btn-primary' %>
-<ul class="animal-list">
+
+<div class="animal-cards">
   <% @animals.each do |animal| %>
-    <li>
-      <h3><%= animal.name %></h3>
-      <p><strong>Species:</strong> <%= animal.species %></p>
-      <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
-      <p><strong>Location:</strong> <%= animal.location %></p>
-      <p><strong>Description:</strong> <%= animal.description %></p>
-      <%= link_to 'Show', animal_path(animal) %>
-    </li>
+    <div class="card">
+      <div class="card-image">
+        <img src="https://static-00.iconduck.com/assets.00/animal-icon-2048x2048-rdj39f2s.png" alt="<%= animal.name %> image"/>
+      </div>
+      <div class="card-content">
+        <h3><%= animal.name %></h3>
+        <p><strong>Species:</strong> <%= animal.species %></p>
+        <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
+        <p><strong>Location:</strong> <%= animal.location %></p>
+        <p><strong>Description:</strong> <%= animal.description %></p>
+        <%= link_to 'Show', animal_path(animal), class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
 
 <%# filter %>
 <%# list of animals %>
