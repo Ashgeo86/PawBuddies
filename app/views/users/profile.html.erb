@@ -1,0 +1,15 @@
+<h1>My Profile</h1>
+<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+<h2>My Bookings</h2>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>Booking for <%= booking.animal.name %> from <%= booking.start_date %> to <%= booking.end_date %></li>
+  <% end %>
+</ul>
+
+<%# see their bookings
+<%# see their reviews
+<%# see their animals
+<%# see their profile
+<%# edit their profile
+<%# delete their profile
