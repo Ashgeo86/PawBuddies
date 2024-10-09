@@ -1,6 +1,7 @@
 <h1>Animals List</h1>
 
 <%= link_to 'Add an Animal', new_animal_path, class: 'btn btn-primary' %>
+
 <ul class="animal-list">
   <% @animals.each do |animal| %>
     <li>
@@ -10,6 +11,13 @@
       <p><strong>Location:</strong> <%= animal.location %></p>
       <p><strong>Description:</strong> <%= animal.description %></p>
       <%= link_to 'Show', animal_path(animal) %>
+      <%# <%= link_to 'Delete an Animal', animals_path, class: 'btn btn-secondary' %>
+
+
+<%= link_to "Delete",
+  animal_path(animal),
+  class: 'btn btn-secondary', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
     </li>
   <% end %>
 </ul>
