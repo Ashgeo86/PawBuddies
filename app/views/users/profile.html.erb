@@ -1,9 +1,31 @@
- <div class="container">
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-  <div>
-    <p>My Profile</p>
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
-  </div>
+
+<h1>My Profile</h1>
+<p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+<div class="user-container">
+<%= image_tag(@user.image, class: "profile-pic", alt: "User photo") %>
+<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+<h2>My Bookings</h2>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>Booking for <%= booking.animal.name %> from <%= booking.start_date %> to <%= booking.finish_date %></li>
+  <% end %>
+</ul>
+
+<h4>My animals</h4>
+<%= link_to 'Add an Animal', new_animal_path, class: 'btn btn-primary' %>
+<ul>
+  <% current_user.animals.each do |animal| %>
+    <li>
+      <h3><%= animal.name %></h3>
+      <p><strong>Species:</strong> <%= animal.species %></p>
+      <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
+      <p><strong>Location:</strong> <%= animal.location %></p>
+      <p><strong>Description:</strong> <%= animal.description %></p>
+      <%= link_to 'Show', animal_path(animal) %>
+    </li>
+  <% end %>
+</ul>
+
 
   <h2>My Bookings</h2>
     <ul>
