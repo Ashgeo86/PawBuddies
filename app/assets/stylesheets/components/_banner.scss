@@ -12,6 +12,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+
 }
 
 .banner-bottom {
@@ -23,8 +24,20 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.btn {
-  color: beige;
+.btn-flat {
+  color: #F4F4F4;
+  border: 2px solid #F4F4F4;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+
+.btn-flat:hover {
+  opacity: 1;
+  color: F65966;
   font-weight: bold;
 }
 
