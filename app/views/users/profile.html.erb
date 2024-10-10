@@ -1,5 +1,8 @@
 <h1>My Profile</h1>
 <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+<div class="user-container">
+<%= image_tag(@user.image, class: "profile-pic", alt: "User photo") %>
+
 <h2>My Bookings</h2>
 <ul>
   <% @bookings.each do |booking| %>

@@ -1,7 +1,7 @@
 <h1><%= @animal.name %></h1>
 
 <div class="animal-container">
-<%= image_tag("cutedog1.jpeg", class: "profile-pic", alt: "Cute Dog") %>
+<%= image_tag(@animal.image, class: "profile-pic", alt: "Cute Dog") %>
 
 
 <div class="animal-details">
