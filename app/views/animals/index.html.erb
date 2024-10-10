@@ -7,9 +7,9 @@
   <div class="animal-cards row">
     <% @animals.each do |animal| %>
       <div class="animal-card col-3 d-flex flex-column">
-        <div class="card-image">
-          <img src="https://static-00.iconduck.com/assets.00/animal-icon-2048x2048-rdj39f2s.png" alt="<%= animal.name %> image"/>
-        </div>
+
+          <%= image_tag(animal.image, alt: "animal main image") %>
+
         <div class="card-content">
           <h3><%= animal.name %></h3>
           <p><strong>Species:</strong> <%= animal.species %></p>
