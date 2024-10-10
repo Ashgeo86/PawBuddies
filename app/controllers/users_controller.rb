@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
     @bookings = Booking.where(user: current_user)
+    @animals = @user.animals
   end
 
   def edit
