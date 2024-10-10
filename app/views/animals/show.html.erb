@@ -1,33 +1,34 @@
-<h1><%= @animal.name %></h1>
+<div class="container">
+  <h1>Hi, I'm <%= @animal.name %></h1>
 
-<div class="animal-container">
-<%= image_tag("cutedog1.jpeg", class: "profile-pic", alt: "Cute Dog") %>
-
-
-<div class="animal-details">
-  <p><strong>Owner:</strong> <%= link_to "#{@animal.user.first_name} #{@animal.user.last_name}", profile_path(@animal.user) %></p>
-  <p><strong>Species:</strong> <%= @animal.species %></p>
-  <p><strong>Price (p/h):</strong> <%= number_to_currency(@animal.price) %></p>
-  <p><strong>Location:</strong> <%= @animal.location %></p>
-  <p><strong>Description:</strong> <%= @animal.description %></p>
-</div>
+  <div class="animal-container">
+  <%= image_tag("cutedog1.jpeg", class: "profile-pic", alt: "Cute Dog") %>
 
 
-
-<div class="animal-booking-form">
-  <%= simple_form_for [@animal, @booking] do |f| %>
-  <div class="form-group">
-    <%= f.input :start_date, label: 'Start Date', input_html: { class: 'form-control' } %>
+  <div class="animal-details">
+    <p><strong>Owner:</strong> <%= link_to "#{@animal.user.first_name} #{@animal.user.last_name}", profile_path(@animal.user) %></p>
+    <p><strong>Species:</strong> <%= @animal.species %></p>
+    <p><strong>Price (p/h):</strong> <%= number_to_currency(@animal.price) %></p>
+    <p><strong>Location:</strong> <%= @animal.location %></p>
+    <p><strong>Description:</strong> <%= @animal.description %></p>
   </div>
 
-  <div class="form-group">
-    <%= f.input :finish_date, label: 'Finish Date', input_html: { class: 'form-control' } %>
-  </div>
 
-  <div>
-    <%= f.submit 'Book Now', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+
+  <div class="animal-booking-form">
+    <%= simple_form_for [@animal, @booking] do |f| %>
+    <div class="form-group">
+      <%= f.input :start_date, label: 'Start Date', input_html: { class: 'form-control' } %>
+    </div>
+
+    <div class="form-group">
+      <%= f.input :finish_date, label: 'Finish Date', input_html: { class: 'form-control' } %>
+    </div>
+
+    <div>
+      <%= f.submit 'Book Now', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
 
   <% if @booking && @booking.errors.any? %>
     <div class="errors">
@@ -39,12 +40,12 @@
       </ul>
     </div>
   <% end %>
+  </div>
+
+  </div>
+
+  <%= link_to 'Back to Animals', animals_path %>
 </div>
-
-</div>
-
-<%= link_to 'Back to Animals', animals_path %>
-
 <%# book an animal %>
 <%# see the animals details %>
 <%# navigate to the owners profile %>
