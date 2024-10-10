@@ -6,7 +6,9 @@
 
 
   <div class="animal-details">
-    <p><strong>Owner:</strong> <%= link_to "#{@animal.user.first_name} #{@animal.user.last_name}", profile_path(@animal.user) %></p>
+
+    <%= image_tag(@user.image, class: "avatar-large", alt: "User photo") %>
+    <p><strong>Owner:</strong> <%= link_to "#{@animal.user.first_name} #{@animal.user.last_name}"%></p>
     <p><strong>Species:</strong> <%= @animal.species %></p>
     <p><strong>Price (p/h):</strong> <%= number_to_currency(@animal.price) %></p>
     <p><strong>Location:</strong> <%= @animal.location %></p>
