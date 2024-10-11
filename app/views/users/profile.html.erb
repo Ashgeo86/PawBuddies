@@ -33,7 +33,7 @@
         <li class="user-animal-item">
           <div class="user-animal-card">
             <div class="user-animal-image-container">
-              <%= image_tag(animal.image, class: "user-animal-image", alt: "animal main image") %>
+              <%= cl_image_tag(animal.photo.key, class: "user-animal-image", alt: "animal main image") %>
             </div>
             <div class="user-animal-details">
               <h3 class="user-animal-name"><%= animal.name %></h3>

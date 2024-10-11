@@ -1,7 +1,7 @@
 <div class="container">
   <div class="animals-index">
     <h1>Find your purrfect buddy here</h1>
-    <%= link_to 'Filters', new_animal_path, class: 'btn btn-primary' %>
+    <%# <%= link_to 'Filters', new_animal_path, class: 'btn btn-primary' %>
   </div>
 
   <div class="animal-cards row">
@@ -11,7 +11,7 @@
         <div class="card-content">
           <h3><%= animal.name %></h3>
           <p><strong>Species:</strong> <%= animal.species %></p>
-          <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
+          <p><strong>Price: £</strong><%= animal.price %></p>
           <p><strong>Location:</strong> <%= animal.location %></p>
           <p class="mb-0"><strong>Description:</strong> <%= animal.description %></p>
           <%= link_to 'About Me', animal_path(animal), class: "btn btn-primary" %>
