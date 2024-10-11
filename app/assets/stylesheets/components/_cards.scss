@@ -6,11 +6,14 @@
 
 .profile-index {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  margin-top: 10px;
+  gap: 20px;
+}
+
+.profile-head {
+  font-style: normal;
+  font-weight: 200;
   margin-bottom: 20px;
 }
 
@@ -19,13 +22,21 @@
 }
 
 .user-index {
- margin-top: 0;
+ display: flex;
+ flex-direction: column;
+ padding: 20px;
+ border-radius: 8px;
+ background-color: #ffffff;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ flex: 1;
+ font-weight: 200;
  margin-bottom: 0;
 }
 
 .user-info-card {
   display: flex;
-  gap: 50px;
+  justify-content: space-between;
+  gap: 20px;
   align-items: flex-start;
   padding: 20px;
   background-color: #f9f9f9;
@@ -37,6 +48,12 @@
 .user-bookings-card {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  width: 700px;
 }
 
 .user-bookings-card ul {
@@ -44,4 +61,76 @@
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.user-animals-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  // margin-bottom: 20px;
+  // background-color: #f9f9f9;
+  // border-radius: 8px;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-animals-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-animal-item {
+  flex: 1;
+  max-width: 300px;
+}
+
+.user-animal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.user-animal-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.user-animal-image {
+  border-radius: 8px;
+  max-width: 300px;
+  max-height: 300px;
+  padding: 15px;
+
+}
+
+.user-animal-details {
+  text-align: center;
+  height: 250px;
+}
+
+.user-animal-name {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.btn-show-animal,
+.btn-delete-animal {
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn-show-animal {
+  margin-bottom: 10px;
 }

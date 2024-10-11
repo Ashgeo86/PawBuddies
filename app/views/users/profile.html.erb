@@ -1,14 +1,17 @@
 <div class="container">
-
-  <div class="profile-index">
-    <h1 class="user-index"><%= @user.first_name %> <%= @user.last_name %></h1>
-    <%= link_to "Log out", destroy_user_session_path, class: 'btn btn-primary btn-logout', data: { turbo_method: :delete } %>
-  </div>
-
   <div class="user-info-card">
-    <%= image_tag(@user.image, class: "profile-pic", alt: "User photo") %>
+    <%# <%= link_to "Log out", destroy_user_session_path, class: 'btn btn-primary btn-logout', data: { turbo_method: :delete } %>
+  <%= image_tag(@user.image, class: "profile-pic", alt: "User photo") %>
+  <div class="profile-index">
+    <div class="user-index">
+      <h1 class="profile-head"><%= @user.first_name %> <%= @user.last_name %></h1>
+      <p>I've rented <%= pluralize(@user.bookings.count, 'buddies') %></p>
+      <p>Email: <%= @user.email %></p>
+
+   </div>
+
     <div class="user-bookings-card">
-      <h2>My Bookings</h2>
+      <h1 class="profile-head">My Bookings</h1>
         <ul>
           <% @bookings.each do |booking| %>
             <li><strong><%= booking.animal.name %></strong> from <%= booking.start_date %> to <%= booking.finish_date %></li>
@@ -17,33 +20,29 @@
             <% end %>
           <% end %>
         </ul>
+      </div>
     </div>
   </div>
 
-    <div class="animals-index">
+    <div class="user-animals-index">
       <h4>My animals</h4>
       <%= link_to 'Add an Animal', new_animal_path, class: 'btn btn-primary' %>
     </div>
-        <div class="animal-cards row">
-          <ul>
-          <% current_user.animals.each do |animal| %>
-          <div class="animal-card col-3 d-flex flex-column">
-            <div class="card-image">
-              <img src="https://static-00.iconduck.com/assets.00/animal-icon-2048x2048-rdj39f2s.png" alt="<%= animal.name %> image"/>
+    <ul class="user-animals-list">
+      <% current_user.animals.each do |animal| %>
+        <li class="user-animal-item">
+          <div class="user-animal-card">
+            <div class="user-animal-image-container">
+              <%= image_tag(animal.image, class: "user-animal-image", alt: "animal main image") %>
             </div>
-            <div class="card-content">
-              <li>
-                <h3><%= animal.name %></h3>
-                <p><strong>Species:</strong> <%= animal.species %></p>
-                <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
-                <p><strong>Location:</strong> <%= animal.location %></p>
-                <p><strong>Description:</strong> <%= animal.description %></p>
-                <%= link_to 'Show', animal_path(animal) %>
-                <%= link_to "Delete", animal_path(animal), class: 'btn btn-warning', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-              </li>
+            <div class="user-animal-details">
+              <h3 class="user-animal-name"><%= animal.name %></h3>
+              <%= link_to 'Show', animal_path(animal), class: "btn-show-animal btn btn-info" %>
+              <%= link_to "Delete", animal_path(animal), class: 'btn-delete-animal btn btn-warning', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </div>
-          <% end %>
           </div>
-        </ul>
-    </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
+</div>
