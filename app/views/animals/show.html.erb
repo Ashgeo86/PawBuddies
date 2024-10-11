@@ -2,8 +2,7 @@
   <h1>Hi, I'm <%= @animal.name %></h1>
 
 <div class="animal-container">
-<%= image_tag(@animal.image, class: "profile-pic", alt: "Cute Dog") %>
-
+<%= cl_image_tag(@animal.photo.key, class: "profile-pic", alt: "Cute Dog") %>
 
   <div class="animal-details">
 

@@ -1,15 +1,13 @@
 <div class="container">
   <div class="animals-index">
-    <h1>Find your purrfect buddie here</h1>
+    <h1>Find your purrfect buddy here</h1>
     <%= link_to 'Filters', new_animal_path, class: 'btn btn-primary' %>
   </div>
 
   <div class="animal-cards row">
     <% @animals.each do |animal| %>
       <div class="animal-card col-3 d-flex flex-column">
-
-          <%= image_tag(animal.image, alt: "animal main image") %>
-
+          <%= cl_image_tag(animal.photo.key, class: "animal-image", alt: "animal main image") %>
         <div class="card-content">
           <h3><%= animal.name %></h3>
           <p><strong>Species:</strong> <%= animal.species %></p>
