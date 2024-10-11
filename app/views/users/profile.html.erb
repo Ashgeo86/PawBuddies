@@ -1,13 +1,12 @@
 <div class="container">
   <div class="user-info-card">
-    <%# <%= link_to "Log out", destroy_user_session_path, class: 'btn btn-primary btn-logout', data: { turbo_method: :delete } %>
   <%= image_tag(@user.image, class: "profile-pic", alt: "User photo") %>
   <div class="profile-index">
     <div class="user-index">
       <h1 class="profile-head"><%= @user.first_name %> <%= @user.last_name %></h1>
       <p>I've rented <%= pluralize(@user.bookings.count, 'buddies') %></p>
       <p>Email: <%= @user.email %></p>
-
+      <%= link_to "Log out", destroy_user_session_path, class: 'btn btn-primary btn-logout btn-sm', data: { turbo_method: :delete } %>
    </div>
 
     <div class="user-bookings-card">
