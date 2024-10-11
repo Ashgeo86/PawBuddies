@@ -11,7 +11,7 @@
         <div class="card-content">
           <h3><%= animal.name %></h3>
           <p><strong>Species:</strong> <%= animal.species %></p>
-          <p><strong>Price:</strong> <%= number_to_currency(animal.price) %></p>
+          <p><strong>Price: £</strong><%= animal.price %></p>
           <p><strong>Location:</strong> <%= animal.location %></p>
           <p class="mb-0"><strong>Description:</strong> <%= animal.description %></p>
           <%= link_to 'About Me', animal_path(animal), class: "btn btn-primary" %>

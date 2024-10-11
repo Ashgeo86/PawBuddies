@@ -85,8 +85,8 @@ animal15.photo.attach(io: file, filename: "peanut.jpeg", content_type: "image/jp
 animal15.save
 animal16 = Animal.new(name: "Simba", species: "Cat", description: "A regal Maine Coon with a majestic mane and a friendly, social nature.", location: "Brixton", price: 14.00, user: user1, image: "simba.jpg")
 file = File.open("app/assets/images/simba.jpg")
-animal6.photo.attach(io: file, filename: "simba.jpg", content_type: "image/jpg")
-animal6.save
+animal16.photo.attach(io: file, filename: "simba.jpg", content_type: "image/jpg")
+animal16.save
 animal17 = Animal.new(name: "Bruno", species: "Dog", description: "A brave and energetic boxer who loves to play and is great with kids.", location: "Clapham", price: 23.00, user: user5, image: "bruno.jpg")
 file = File.open("app/assets/images/bruno.jpg")
 animal17.photo.attach(io: file, filename: "bruno.jpg", content_type: "image/jpg")
