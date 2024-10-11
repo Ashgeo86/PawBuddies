@@ -85,6 +85,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: space-between;
 }
 
 .user-animal-item {
@@ -112,16 +113,19 @@ body {
 }
 
 .user-animal-image {
-  border-radius: 8px;
-  max-width: 300px;
-  max-height: 300px;
+  border-radius: 8px !important;
+  width: 300px;
+  height: 300px;
   padding: 15px;
+  object-fit: cover;
 
 }
 
 .user-animal-details {
   text-align: center;
-  height: 250px;
+  height: 300px;
+  flex: 1;
+  width: 250px;
 }
 
 .user-animal-name {
@@ -131,11 +135,25 @@ body {
 
 .btn-show-animal,
 .btn-delete-animal {
-  display: inline-block;
+  display: inline-flex;
   margin-top: 10px;
-  width: 100%;
+  gap: 20px;
 }
 
-.btn-show-animal {
-  margin-bottom: 10px;
+.btn-logout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #cccccc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn-logout:hover {
+  background-color: #b3b3b3;
 }
